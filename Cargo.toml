@@ -1,0 +1,11 @@
+[workspace]
+members = [
+    "src-tauri",
+    "tauri-plugin-transparent-wry",
+]
+resolver = "2"
+
+[workspace.dependencies]
+serde_json = "1.0.113"
+serde = { version = "1.0.196", features = ["derive"] }
+tauri = { version = "2.0.0-alpha.21", features = [] }

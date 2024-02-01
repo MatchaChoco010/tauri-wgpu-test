@@ -1,0 +1,11 @@
+[package]
+name = "tauri-plugin-transparent-wry"
+version = "0.0.0"
+edition = "2021"
+
+[dependencies]
+tauri.workspace = true
+
+[target."cfg(target_os = \"windows\")".dependencies]
+webview2-com = "0.28"
+windows-core = "0.52.0"
