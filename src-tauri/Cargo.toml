@@ -1,0 +1,31 @@
+[package]
+name = "app"
+version = "0.1.0"
+description = "A Tauri App"
+authors = ["you"]
+license = ""
+repository = ""
+default-run = "app"
+edition = "2021"
+rust-version = "1.70"
+
+[build-dependencies]
+tauri-build = { version = "2.0.0-alpha.14", features = [] }
+
+[dependencies]
+serde_json.workspace = true
+serde.workspace = true
+tauri.workspace = true
+tauri-plugin-window-state = "2.0.0-alpha.6"
+tauri-plugin-transparent-wry = { path = "../tauri-plugin-transparent-wry" }
+raw-window-handle = "0.5.2"
+wgpu = "0.18.0"
+tokio = { version = "1.35.1", features = ["full"] }
+bytemuck = { version = "1.14.1", features = ["derive"] }
+glam = "0.25.0"
+
+[features]
+# this feature is used for production builds or when `devPath` points to the filesystem and the built-in dev server is disabled.
+# If you use cargo directly instead of tauri's cli you can use this feature flag to switch between tauri's `dev` and `build` modes.
+# DO NOT REMOVE!!
+custom-protocol = [ "tauri/custom-protocol" ]
